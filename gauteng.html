@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Gauteng — Reakgona Tours</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Generate gallery safely using innerHTML
+      const grid = document.querySelector('.gallery-grid');
+      let html = '';
+      for (let i = 1; i <= 30; i++) {
+        html += `<img src="images/gauteng/${i}.webp" loading="lazy" alt="Gauteng Image ${i}">`;
+      }
+      grid.innerHTML = html;
+
+      // Lightbox logic
+      const images = Array.from(document.querySelectorAll(".gallery-grid img"));
+      const modal = document.getElementById("lightboxModal");
+      const modalImg = document.getElementById("lightboxImg");
+      const closeBtn = document.querySelector(".close-lightbox");
+      const prevBtn = document.querySelector(".prev-lightbox");
+      const nextBtn = document.querySelector(".next-lightbox");
+      let currentIndex = 0;
+
+      images.forEach((img, idx) => {
+        img.addEventListener("click", () => {
+          currentIndex = idx;
+          modal.style.display = "flex";
+          modalImg.src = img.src;
+        });
+      });
+
+      closeBtn.addEventListener("click", () => modal.style.display = "none");
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        modalImg.src = images[currentIndex].src;
+      });
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        modalImg.src = images[currentIndex].src;
+      });
+      modal.addEventListener("click", e => {
+        if (e.target === modal) modal.style.display = "none";
+      });
+    });
+  </script>
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      padding: 20px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 2px solid #00FF00;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00FF00;
+    }
+    #lightboxModal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    #lightboxImg {
+      max-width: 90%;
+      max-height: 85vh;
+      border: 3px solid #00FF00;
+      border-radius: 8px;
+    }
+    .close-lightbox, .prev-lightbox, .next-lightbox {
+      position: absolute;
+      color: #00FF00;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 8px 12px;
+      user-select: none;
+    }
+    .close-lightbox { top: 20px; right: 30px; }
+    .prev-lightbox { left: 30px; top: 50%; transform: translateY(-50%); }
+    .next-lightbox { right: 30px; top: 50%; transform: translateY(-50%); }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header role="banner">
+  <div class="container header-inner">
+    <div class="brand">
+      <a href="index.html" aria-label="Reakgona Tours Home">
+        <img src="images/logo.png" alt="Reakgona Tours" width="56" height="56">
+      </a>
+    </div>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a> <!-- ✅ ADDED -->
+      <a class="active" href="services.html" aria-current="page">Services</a>
+      <a href="experiences.html">Gallery</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="book.html" class="btn btn-primary">Book Now</a>
+    </nav>
+    <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">☰</button>
+  </div>
+</header>
+
+<main>
+  <div style="margin:20px 0;">
+    <a href="experiences.html" style="display:inline-block; background:#00FF00; color:#000; padding:10px 20px; border-radius:5px; text-decoration:none; font-weight:bold; transition:0.3s;">
+      ← Back to Experiences
+    </a>
+  </div>
+
+  <section class="section container">
+    <div class="section-title">Gauteng Gallery</div>
+    <div class="section-sub">30 vibrant images of Gauteng attractions and resorts</div>
+    <div class="gallery-grid">
+      <!-- Images inserted by JavaScript -->
+    </div>
+  </section>
+</main>
+
+<!-- Lightbox Modal -->
+<div id="lightboxModal">
+  <span class="close-lightbox">✕</span>
+  <span class="prev-lightbox">❮</span>
+  <img id="lightboxImg" src="">
+  <span class="next-lightbox">❯</span>
+</div>
+
+<!-- FULL FOOTER -->
+<footer>
+  <div class="footer-grid container">
+    <div>
+      <img src="images/logo.png" alt="">
+      <p style="color:var(--muted);margin-top:10px">Reakgona Tours — Travel With Ease.</p>
+    </div>
+    <div>
+      <h4 style="color:var(--green)">Quick Links</h4>
+<a href="index.html">Home</a><br>
+<a href="about.html">About</a><br>
+<a href="services.html">Services</a><br>
+<a href="experiences.html">Gallery</a><br>
+<a href="privacy.html">Privacy Policy</a><br>
+<a href="book.html">Book</a>
+    </div>
+    <div>
+      <h4 style="color:var(--green)">Contact</h4>
+      <div>Ramokgoro – 079 098 8801</div>
+      <div>Mabombela – 073 952 8645</div>
+      <div style="margin-top:8px">
+        <a href="mailto:enquiries@reakgonatours.co.za">enquiries@reakgonatours.co.za</a><br>
+        <a href="mailto:booking@reakgonatours.co.za">booking@reakgonatours.co.za</a>
+      </div>
+    </div>
+    <div>
+      <h4 style="color:var(--green)">Social</h4>
+      <div style="display:flex; gap:10px; margin-top:8px;">
+        <a href="https://www.facebook.com/61580650043823" target="_blank">
+          <img src="images/facebook.jpg" style="width:30px;height:30px;" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/reakgonatour001/" target="_blank">
+          <img src="images/instagram.jpg" style="width:30px;height:30px;" alt="Instagram">
+        </a>
+        <a href="https://x.com/ReakgonaTours" target="_blank">
+          <img src="images/twitterx.png" style="width:30px;height:30px;" alt="Twitter / X">
+        </a>
+       <a href="https://www.tiktok.com/@reakgonatours" target="_blank">
+  <img src="images/tiktok.jpg" style="width:30px;height:30px;" alt="TikTok">
+</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Reakgona Tours. All Rights Reserved.</div>
+</footer>
+
+</body>
+
+</html>

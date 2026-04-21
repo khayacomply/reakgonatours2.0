@@ -1,0 +1,19 @@
+# Reakgona Tours - robots.txt
+# Last updated: April 2026
+
+# Allow all major search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Block crawling of common non-public paths (if you add them later)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /*?*sort=      # Block duplicate sort parameters
+Disallow: /*?*sessionid=  # Block session ID URLs
+
+# Point crawlers to your sitemap (CRITICAL for indexing)
+Sitemap: https://www.reakgonatours.co.za/sitemap.xml
+
+# Crawl-delay for smaller servers (optional - remove if not needed)
+# Crawl-delay: 10

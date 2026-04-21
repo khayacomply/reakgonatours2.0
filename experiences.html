@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <!-- 🔹 Core Technical SEO -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"/>
+  <title>Gallery — Reakgona Tours | South Africa Travel Photos & Destinations</title>
+  <meta name="description" content="Explore Reakgona Tours' gallery: Mpumalanga adventures, Durban beaches, Mozambique coasts, Bela-Bela resorts & more. Real photos from real South African tours. Book your experience today."/>
+  <meta name="keywords" content="Reakgona Tours gallery, South Africa travel photos, Mpumalanga tour images, Durban beach pictures, Mozambique coastal photos, Bela-Bela resort gallery"/>
+  <meta name="author" content="Reakgona Tours (Pty) Ltd"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <link rel="canonical" href="https://www.reakgonatours.co.za/experiences.html"/>
+
+  <<!-- In index.html, about.html, services.html, etc. -->
+
+<!-- Google -->
+<meta name="google-site-verification" content="googlec6bec6a61769e6c2">
+
+<!-- Bing -->
+<meta name="msvalidate.01" content="68BF2333C250465791536669FC6D6C2B">
+
+  <!-- 🔹 Open Graph / Facebook & LinkedIn -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.reakgonatours.co.za/experiences.html"/>
+  <meta property="og:title" content="Gallery — Reakgona Tours | Travel With Ease"/>
+  <meta property="og:description" content="Browse stunning photos from our South African tours: Mpumalanga, Durban, Mozambique, Bela-Bela & more. Real experiences, real memories."/>
+  <meta property="og:image" content="https://www.reakgonatours.co.za/images/og-gallery.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:locale" content="en_ZA"/>
+  <meta property="og:site_name" content="Reakgona Tours"/>
+
+  <!-- 🔹 Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Gallery — Reakgona Tours | Travel With Ease"/>
+  <meta name="twitter:description" content="Browse stunning photos from our South African tours: Mpumalanga, Durban, Mozambique, Bela-Bela & more."/>
+  <meta name="twitter:image" content="https://www.reakgonatours.co.za/images/og-gallery.jpg"/>
+
+  <!-- 🔹 Favicon & Theme -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
+  <meta name="theme-color" content="#38b000"/>
+  <meta name="msapplication-TileColor" content="#38b000"/>
+
+  <!-- 🔹 Enhanced Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "name": "Reakgona Tours Gallery",
+        "description": "Photo gallery of South African tours and destinations",
+        "url": "https://www.reakgonatours.co.za/experiences.html",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Reakgona Tours",
+          "url": "https://www.reakgonatours.co.za"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "contentUrl": "https://www.reakgonatours.co.za/images/og-gallery.jpg",
+        "name": "Reakgona Tours Gallery Preview",
+        "description": "Collection of South African tour experiences"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.reakgonatours.co.za"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Gallery",
+            "item": "https://www.reakgonatours.co.za/experiences.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- 🔹 Performance: Preconnect to critical origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
+  <!-- 🔹 Fonts & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- 🔹 Gallery-Specific Styles + Visual Upgrades -->
+  <style>
+    /* Your custom green border + hover glow */
+    .dest-grid .card img {
+      border: 2px solid #00FF00;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      border-radius: 12px;
+    }
+    .dest-grid .card img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 24px rgba(0,255,0,0.6);
+      border-color: var(--green);
+    }
+    .dest-grid .card .body h3 {
+      color: #00FF00;
+      margin: 10px 0 5px;
+      font-weight: 700;
+    }
+    .dest-grid .card .body p {
+      color: #ddd;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    
+    /* 🔹 Visual Polish: Card hover lift + image zoom */
+    .dest-grid .card {
+      will-change: transform;
+      backface-visibility: hidden;
+    }
+    .dest-grid .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(56,176,0,0.15);
+    }
+    
+    /* 🔹 Trust badge for gallery section */
+    .gallery-trust {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56,176,0,0.1);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--green);
+      margin-bottom: 16px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.85} }
+    
+    /* 🔹 CTA button hover glow */
+    .btn-primary:hover {
+      box-shadow: 0 0 24px rgba(56,176,0,0.6);
+      transform: translateY(-2px);
+      transition: all 0.2s ease;
+    }
+    
+    /* 🔹 Responsive image loading polish */
+    .dest-grid .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    /* 🔹 Mobile nav polish */
+    @media (max-width:1100px) {
+      .nav { 
+        background: rgba(0,0,0,0.95); 
+        padding: 20px; 
+        border-radius: 12px; 
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+
+  <!-- 🔹 Defer non-critical JS -->
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader" role="status" aria-live="polite">
+  <div class="loader-logo">
+    <img src="images/logo.png" alt="Reakgona Tours loading" width="120" height="120">
+    <p>LOADING</p>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header role="banner">
+  <div class="container header-inner">
+    <div class="brand">
+      <a href="index.html" aria-label="Reakgona Tours Home">
+        <img src="images/logo.png" alt="Reakgona Tours" width="56" height="56">
+      </a>
+    </div>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a> <!-- ✅ ADDED -->
+      <a class="active" href="services.html" aria-current="page">Services</a>
+      <a href="experiences.html">Gallery</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="book.html" class="btn btn-primary">Book Now</a>
+    </nav>
+    <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">☰</button>
+  </div>
+</header>
+
+<main role="main">
+  <section class="section container" aria-labelledby="gallery-title">
+    <!-- 🔹 Trust Badge -->
+    <span class="gallery-trust">✓ 200+ Real Tour Photos</span>
+    
+    <h1 id="gallery-title" class="section-title">Our Destinations</h1>
+    <p class="section-sub">Explore curated tours and galleries by location</p>
+    
+    <div class="dest-grid">
+
+      <!-- MPUMALANGA -->
+      <article class="card">
+        <a href="mpumalanga.html" aria-label="View Mpumalanga Gallery">
+          <img src="images/mpumalanga/cover.jpg" alt="Mpumalanga adventure: Sudwala Caves and quad biking" loading="lazy" width="400" height="200">
+        </a>
+        <div class="body">
+          <h3>Mpumalanga</h3>
+          <p>Adventure tours with 32 images. Quad Biking, Ziplining, Sudwala Caves.</p>
+          <a href="mpumalanga.html" class="btn btn-primary">View Gallery</a>
+        </div>
+      </article>
+
+      <!-- DURBAN -->
+      <article class="card">
+        <a href="durban.html" aria-label="View Durban Gallery">
+          <img src="images/durban/cover.jpg" alt="Durban beach and Ushaka Marine World" loading="lazy" width="400" height="200">
+        </a>
+        <div class="body">
+          <h3>Durban</h3>
+          <p>Beach & city experiences. 18 images showcasing top activities.</p>
+          <a href="durban.html" class="btn btn-primary">View Gallery</a>
+        </div>
+      </article>
+
+      <!-- MOZAMBIQUE -->
+      <article class="card">
+        <a href="mozambique.html" aria-label="View Mozambique Gallery">
+          <img src="images/mozambique/cover.jpg" alt="Mozambique coastal resort with coral reefs" loading="lazy" width="400" height="200">
+        </a>
+        <div class="body">
+          <h3>Mozambique</h3>
+          <p>Island and coastal adventures. 77 images of beaches and culture.</p>
+          <a href="mozambique.html" class="btn btn-primary">View Gallery</a>
+        </div>
+      </article>
+
+      <!-- BELA BELA -->
+      <article class="card">
+        <a href="bela-bela.html" aria-label="View Bela-Bela Gallery">
+          <img src="images/bela-bela/cover.webp" alt="Bela-Bela thermal springs resort" loading="lazy" width="400" height="200">
+        </a>
+        <div class="body">
+          <h3>Bela-Bela</h3>
+          <p>Relaxing thermal springs and day trips. 49 images.</p>
+          <a href="bela-bela.html" class="btn btn-primary">View Gallery</a>
+        </div>
+      </article>
+
+      <!-- GAUTENG -->
+      <article class="card">
+        <a href="gauteng.html" aria-label="View Gauteng Gallery">
+          <img src="images/gauteng/cover.webp" alt="Gauteng city attractions and experiences" loading="lazy" width="400" height="200">
+        </a>
+        <div class="body">
+          <h3>Gauteng</h3>
+          <p>Explore attractions, resorts, and experiences within Gauteng. 30 images.</p>
+          <a href="gauteng.html" class="btn btn-primary">View Gallery</a>
+        </div>
+      </article>
+
+      <!-- NORTH WEST -->
+      <article class="card">
+        <a href="north-west.html" aria-label="View North West Gallery">
+          <img src="images/north-west/cover.webp" alt="North West province wildlife and nature" loading="lazy" width="400" height="200">
+        </a>
+        <div class="body">
+          <h3>North West</h3>
+          <p>Discover wildlife, nature, and adventures across the North West. 31 images.</p>
+          <a href="north-west.html" class="btn btn-primary">View Gallery</a>
+        </div>
+      </article>
+
+    </div>
+    
+    <!-- 🔹 Secondary CTA -->
+    <div style="text-align:center;margin-top:32px">
+      <p style="color:var(--muted);margin-bottom:12px">Don't see your dream destination?</p>
+      <a href="book.html" class="btn btn-outline">Request a Custom Tour</a>
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-grid container">
+    <div>
+      <img src="images/logo.png" alt="Reakgona Tours" width="46" height="46">
+      <p style="color:var(--muted);margin-top:10px">Reakgona Tours — Travel With Ease.</p>
+      <h4 style="color:var(--green)">Social</h4>
+<div style="display:flex; gap:10px; margin-top:8px;">
+  <a href="https://www.facebook.com/61580650043823" target="_blank" rel="noopener" aria-label="Facebook">
+    <img src="images/facebook.jpg" style="width:30px;height:30px;" alt="Facebook" loading="lazy">
+  </a>
+  <a href="https://www.instagram.com/reakgonatour001/" target="_blank" rel="noopener" aria-label="Instagram">
+    <img src="images/instagram.jpg" style="width:30px;height:30px;" alt="Instagram" loading="lazy">
+  </a>
+  <a href="https://x.com/ReakgonaTours" target="_blank" rel="noopener" aria-label="Twitter / X">
+    <img src="images/twitterx.png" style="width:30px;height:30px;" alt="Twitter / X" loading="lazy">
+  </a>
+  <a href="https://www.tiktok.com/@reakgonatours" target="_blank" rel="noopener" aria-label="TikTok">
+    <img src="images/tiktok.jpg" style="width:30px;height:30px;" alt="TikTok" loading="lazy">
+  </a>
+</div>
+    </div>
+    <div>
+      <h4 style="color:var(--green)">Quick Links</h4>
+<a href="index.html">Home</a><br>
+<a href="about.html">About</a><br>
+<a href="services.html">Services</a><br>
+<a href="experiences.html">Gallery</a><br>
+<a href="privacy.html">Privacy Policy</a><br>
+<a href="book.html">Book</a>
+    </div>
+    <div>
+      <h4 style="color:var(--green)">Contact</h4>
+      <div>Ramokgoro – <a href="tel:+27790988801" style="color:var(--green)">079 098 8801</a></div>
+      <div>Mabombela – <a href="tel:+27739528645" style="color:var(--green)">073 952 8645</a></div>
+      <div style="margin-top:8px">
+        <a href="mailto:enquiries@reakgonatours.co.za" style="color:var(--green)">enquiries@reakgonatours.co.za</a><br>
+        <a href="mailto:booking@reakgonatours.co.za" style="color:var(--green)">booking@reakgonatours.co.za</a>
+      </div>
+    </div>
+    <div>
+      <h4 style="color:var(--green)">We Accept</h4>
+      <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+        <span style="background:rgba(255,255,255,0.05);padding:4px 8px;border-radius:4px;font-size:12px">EFT</span>
+        <span style="background:rgba(255,255,255,0.05);padding:4px 8px;border-radius:4px;font-size:12px">Card</span>
+        <span style="background:rgba(255,255,255,0.05);padding:4px 8px;border-radius:4px;font-size:12px">Cash</span>
+        <span style="background:rgba(255,255,255,0.05);padding:4px 8px;border-radius:4px;font-size:12px">WhatsApp Pay</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Reakgona Tours (Pty) Ltd. Reg: K2024574345. All Rights Reserved.</p>
+    <p style="font-size:12px;color:#666;margin-top:4px">
+      <a href="privacy.html" style="color:#666">Privacy Policy</a> • 
+      <a href="#" style="color:#666">Terms of Service</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Lightbox container (reused from main.js) -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview"></div>
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/27674105539" 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener" 
+   aria-label="Chat with us on WhatsApp">
+  <img src="images/whatsapp-icon.png" alt="WhatsApp" width="60" height="60" loading="lazy">
+  <span class="whatsapp-tooltip">Chat with us</span>
+</a>
+</body>
+</html>

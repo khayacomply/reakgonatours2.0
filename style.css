@@ -1,0 +1,418 @@
+/* style.css — Reakgona Tours (FINAL, unified, no chat popup) */
+:root{
+  --green:#38b000;
+  --bg:#000;
+  --muted:#9aa0a6;
+  --card:#0f0f0f;
+  --glass:rgba(255,255,255,0.03);
+  --maxW:1200px;
+  --radius:14px;
+  --fw-bold:800;
+}
+
+/* Reset + base */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:"Poppins",system-ui,Arial,sans-serif;
+  background:var(--bg);
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  -webkit-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga" 1;
+}
+
+/* Global container */
+.container{width:90%;max-width:var(--maxW);margin:0 auto;position:relative;z-index:2}
+
+/* Watermark (logo) on all pages */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  background-image:url('images/logo.png');
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:56vmin;
+  opacity:0.04;
+  filter:grayscale(1) contrast(.9);
+  pointer-events:none;
+}
+
+/* Header */
+header{
+  position:sticky;top:0;left:0;width:100%;z-index:9999;
+  background:linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.6));
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:56px;border-radius:8px}
+.nav{display:flex;gap:18px;align-items:center}
+.nav a{color:#fff;text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
+.nav a:hover{color:var(--green)}
+.menu-btn{display:none;background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;color:#fff}
+
+/* Generic hero */
+.hero{
+  position:relative;min-height:78vh;display:flex;align-items:center;overflow:hidden;padding-top:20px;
+  background-size:cover;background-position:center;
+}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.25));z-index:1}
+.hero-content{position:relative;z-index:2;padding:40px 0;max-width:920px}
+.hero .tag{display:inline-block;color:var(--green);background:rgba(255,255,255,0.02);padding:8px 14px;border-radius:999px;font-weight:700;margin-bottom:12px}
+.hero h1{font-size:clamp(34px,6vw,56px);line-height:1.02;color:var(--green);font-weight:var(--fw-bold);margin:8px 0}
+.hero p.lead{color:#e6e6e6;font-size:18px;margin-bottom:20px;max-width:720px}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Buttons */
+.btn{
+  display:inline-block;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:800;
+}
+.btn-primary{background:var(--green);color:#001}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff}
+
+/* Sections */
+.section{padding:72px 0}
+.section-title{font-size:28px;color:var(--green);font-weight:800;margin-bottom:8px}
+.section-sub{color:var(--muted);margin-bottom:18px}
+
+/* Grid patterns */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+/* Generic card */
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,0.03);box-shadow:0 12px 36px rgba(0,0,0,0.6);transition:transform .25s}
+.card:hover{transform:translateY(-8px)}
+.card img{width:100%;height:200px;object-fit:cover;display:block}
+.card .body{padding:14px}
+
+/* Service card variant */
+.service-card img{height:210px;object-fit:cover;border-radius:8px}
+.service-card h3{margin:12px 0 6px;color:var(--green)}
+
+/* Reviews */
+.review-box{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px;display:flex;gap:12px;align-items:flex-start;border:1px solid rgba(255,255,255,0.03)}
+.review-box img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform .18s}
+.gallery-grid img:hover{transform:scale(1.03)}
+
+/* Booking */
+.booking-wrap{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap}
+.booking-card{flex:1 1 640px;padding:20px;border-radius:16px;background:var(--glass);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.04)}
+.contact-card{flex:1 1 320px;padding:18px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+input,select,textarea{width:100%;padding:12px;border-radius:8px;border:none;background:#0b0b0b;color:#fff;margin-top:10px}
+
+/* Footer */
+footer{background:linear-gradient(180deg,#020202,#040404);padding:48px 0;margin-top:40px;border-top:1px solid rgba(255,255,255,0.02)}
+.footer-grid{max-width:var(--maxW);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.footer-grid img{height:46px}
+.footer-grid a{color:var(--muted);text-decoration:none}
+.footer-bottom{text-align:center;color:#888;margin-top:30px}
+
+/* Floating chat button removed completely */
+
+/* Lightbox (single element reused) */
+.lightbox{
+  position:fixed;inset:0;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;z-index:999999;
+}
+.lightbox img{max-width:94%;max-height:88vh;border-radius:8px}
+
+/* Responsive */
+@media(max-width:1100px){.dest-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:repeat(2,1fr)}.nav{display:none}.menu-btn{display:block}}
+@media(max-width:700px){.dest-grid{grid-template-columns:1fr}.hero h1{font-size:34px}.footer-grid{grid-template-columns:1fr}}
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 999999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#preloader .loader-logo img {
+  width: 120px;
+  filter: drop-shadow(0 0 10px var(--green));
+}
+#preloader .loader-logo p {
+  margin-top: 14px;
+  color: var(--green);
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+.fade-out {
+  opacity: 0;
+  transition: opacity .8s ease;
+  pointer-events: none;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all .9s cubic-bezier(.25,.8,.25,1);
+}
+.reveal-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* CTA panel */
+.cta-panel {
+  background:rgba(255,255,255,0.02);
+  padding:30px;
+  border-radius:14px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.05);
+}
+.cta-panel h2 { color:var(--green); margin-bottom:10px; }
+.cta-row { margin-top:16px; display:flex; justify-content:center; gap:12px; }
+
+/* Social buttons */
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+.social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green);
+  transition: 0.25s;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.social-btn:hover {
+  background: var(--green);
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 0 14px var(--green);
+}
+.social-btn svg { width: 22px; height: 22px; }
+
+/* Contact social icons */
+.contact-social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.contact-icon {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.03);
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: 0.25s;
+  gap: 12px;
+  text-decoration: none;
+}
+.contact-icon:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-3px);
+}
+.contact-icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.contact-icon span {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* =============================== */
+/* 🔥 Upcoming Tours Pop-up */
+.tour-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.tour-popup.active { display:flex; }
+.tour-popup-content {
+  background: #0f0f0f;
+  padding: 24px;
+  max-width: 420px;
+  width: 95%;
+  border-radius: 14px;
+  border: 1px solid var(--green);
+  animation: scaleIn 0.3s ease;
+}
+.tour-popup h2 { color: var(--green); margin-bottom: 10px; }
+.tour-popup p { color: #e6e6e6; margin-bottom: 15px; }
+.tour-close {
+  background: var(--green);
+  color: #000;
+  padding: 8px 14px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Popup animations */
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes scaleIn { from { transform: scale(0.7); opacity:0 } to { transform: scale(1); opacity:1 } }
+
+/* ======================================== */
+/* 🔥 Footer Social Image Icons - Hover Glow */
+/* ======================================== */
+
+/* Target the image-based social icons in footer */
+.footer-grid a img[alt="Facebook"],
+.footer-grid a img[alt="Instagram"],
+.footer-grid a img[alt="Twitter / X"],
+.footer-grid a img[alt="TikTok"] {
+  transition: filter 0.25s ease, transform 0.25s ease;
+  border-radius: 6px;
+  will-change: filter, transform;
+}
+
+/* Desktop hover + keyboard focus glow */
+.footer-grid a:hover img[alt="Facebook"],
+.footer-grid a:hover img[alt="Instagram"],
+.footer-grid a:hover img[alt="Twitter / X"],
+.footer-grid a:hover img[alt="TikTok"],
+.footer-grid a:focus img[alt="Facebook"],
+.footer-grid a:focus img[alt="Instagram"],
+.footer-grid a:focus img[alt="Twitter / X"],
+.footer-grid a:focus img[alt="TikTok"] {
+  filter: drop-shadow(0 0 8px var(--green));
+  transform: translateY(-3px);
+  outline: none;
+}
+
+/* Mobile touch feedback (for devices without hover) */
+@media (hover: none) {
+  .footer-grid a:active img[alt="Facebook"],
+  .footer-grid a:active img[alt="Instagram"],
+  .footer-grid a:active img[alt="Twitter / X"],
+  .footer-grid a:active img[alt="TikTok"] {
+    filter: drop-shadow(0 0 8px var(--green));
+    transform: translateY(-3px);
+  }
+}
+
+/* Optional: Remove old .social-btn styles if no longer used */
+/* .social-icons, .social-btn { display: none; } */
+
+/* ======================================== */
+/* 🔥 Floating WhatsApp Button */
+/* ======================================== */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #25D366; /* Official WhatsApp green */
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.25s ease;
+  text-decoration: none;
+  overflow: visible;
+}
+
+.whatsapp-float img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Tooltip (shows on desktop hover) */
+.whatsapp-tooltip {
+  position: absolute;
+  right: 70px;
+  background: #000;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: all 0.2s ease;
+  pointer-events: none;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.whatsapp-tooltip::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: #000;
+}
+
+/* Desktop hover effects */
+@media (hover: hover) {
+  .whatsapp-float:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+    background: #128C7E; /* Darker green on hover */
+  }
+  .whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+/* Mobile tap feedback */
+@media (hover: none) {
+  .whatsapp-float:active {
+    transform: scale(0.95);
+    background: #128C7E;
+  }
+  .whatsapp-tooltip {
+    display: none; /* Hide tooltip on touch devices */
+  }
+}
+
+/* Accessibility focus state */
+.whatsapp-float:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+}
+
+/* Optional: Pulse animation to draw attention (subtle) */
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 4px 32px rgba(37, 211, 102, 0.7); }
+}
+.whatsapp-float {
+  animation: whatsapp-pulse 2.5s infinite;
+}
